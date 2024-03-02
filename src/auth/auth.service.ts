@@ -8,7 +8,7 @@ import {
 
 import type { AuthEntity } from './entity/auth.entity';
 import { JwtService } from '@nestjs/jwt';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class AuthService {
