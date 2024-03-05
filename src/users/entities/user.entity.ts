@@ -3,7 +3,7 @@ import { Exclude } from 'class-transformer';
 import type { User } from '@prisma/client';
 
 export class UserEntity implements User {
-  constructor(partial: Partial<UserEntity>) {
+  constructor(partial: Partial<UserEntity> | null) {
     Object.assign(this, partial);
   }
 
@@ -11,7 +11,7 @@ export class UserEntity implements User {
     return users.map((user) => new UserEntity(user));
   }
 
-  static one(user: UserEntity) {
+  static one(user: UserEntity | null) {
     return new UserEntity(user);
   }
 
@@ -19,16 +19,16 @@ export class UserEntity implements User {
   id: number;
 
   @ApiProperty()
-  name: string;
+  name: User['name'];
 
   @ApiProperty()
-  email: string;
+  email: User['email'];
 
   @ApiProperty()
-  createdAt: Date;
+  createdAt: User['createdAt'];
 
   @ApiProperty()
-  updatedAt: Date;
+  updatedAt: User['updatedAt'];
 
   @Exclude()
   password: string;

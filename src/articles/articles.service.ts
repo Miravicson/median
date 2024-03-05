@@ -1,6 +1,6 @@
 import { CreateArticleDto } from './dto/create-article.dto';
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { UpdateArticleDto } from './dto/update-article.dto';
 
 @Injectable()
