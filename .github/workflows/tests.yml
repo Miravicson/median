@@ -1,0 +1,13 @@
+name: Tests
+on: pull_request
+env:
+  API_KEY: "an-api-key"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: npm ci
+      - name: Run tests
+        run: npm run test
